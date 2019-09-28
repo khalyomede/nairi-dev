@@ -1,40 +1,33 @@
 extends /layout/disconnected
 
 block variables
+	- const title = article.title
+	- const description = article.excerpt
 	- const brand = "nairi.dev"
 	- const slogan = "Blog orienté programmation web, par les frères Nairi."
-	- const title = "Accueil"
-	- const description = slogan
-
 block content
-	include /component/article
-	include /component/footer
 	include /component/navbar
 	include /component/navbar-item
+	include /component/footer
 
 	+navbar({ color: "black", brand: brand })
 		+navbar-item({ title: "Articles", url: "/article" })
 		+navbar-item({ title: "À propos", url: "/a-propos" })
 		+navbar-item({ title: "Github", url: "https://github.com/khalyomede/nairi-dev" })
 
+	.parallax-container
+		.parallax
+			img(src=article.image)
+	
 	.container
 		.row
-			.col.s12.center-align
-				h1 #{brand}
-				div #{slogan}
+			.col.s12
+				h1 #{article.title}
 		.row
-			for article in articles
-				.col.s12.m6.l6.xl4
-					+article({
-						image: article.image,
-						title: article.title,
-						excerpt: article.excerpt,
-						url: `/article/${article.slug}`
-					})
+			.col.s12 !{article.content}
 
 	+footer({
 		color: "black",
 		brand: brand,
-		slogan: slogan,
-		copyright: "© 2019 nairi.dev"
+		slogan: slogan
 	})

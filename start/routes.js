@@ -17,3 +17,4 @@
 const Route = use("Route");
 
 Route.get("/", "HomeController.index");
+Route.resource("article", "ArticleController").only(["show"]);

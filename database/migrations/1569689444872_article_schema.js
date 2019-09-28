@@ -11,6 +11,8 @@ class ArticleSchema extends Schema {
       table.string("title", 191);
       table.string("slug", 191);
       table.string("excerpt", 191);
+      table.string("image", 191);
+      table.string("url", 101);
       table.text("content");
     });
   }
