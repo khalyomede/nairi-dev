@@ -1,8 +1,10 @@
 extends /layout/disconnected
 
 block variables
+	- const brand = "nairi.dev"
+	- const slogan = "Blog orienté programmation web, par les frères Nairi."
 	- const title = "Accueil"
-	- const description = "Blog orienté programmation web, par les frères Nairi."
+	- const description = slogan
 
 block content
 	include /component/article
@@ -10,7 +12,7 @@ block content
 	include /component/navbar
 	include /component/navbar-item
 
-	+navbar({ color: "black", brand: "nairi.dev" })
+	+navbar({ color: "black", brand: brand })
 		+navbar-item({ title: "Articles", url: "/article" })
 		+navbar-item({ title: "À propos", url: "/a-propos" })
 		+navbar-item({ title: "Github", url: "https://github.com/khalyomede/nairi-dev" })
@@ -18,8 +20,8 @@ block content
 	.container
 		.row
 			.col.s12.center-align
-				h1 nairi.dev
-				div Blog orienté programmation web, par les frères Nairi.
+				h1 #{brand}
+				div #{slogan}
 		.row
 			for article in articles
 				.col.s12.m6.l6.xl4
@@ -32,7 +34,7 @@ block content
 
 	+footer({
 		color: "black",
-		brand: "nairi.dev",
-		slogan: "Blog orienté programmation web, par les frères Nairi.",
+		brand: brand,
+		slogan: slogan,
 		copyright: "© 2019 nairi.dev"
 	})
