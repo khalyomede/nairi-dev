@@ -28,7 +28,9 @@
     "@adonisjs/shield": "^1.0.8",
     "adonis-pug": "4.*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mysql": "^2.17.1"
+  },
   "autoload": {
     "App": "./app"
   }
