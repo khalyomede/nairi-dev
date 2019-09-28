@@ -1,8 +1,8 @@
 "use strict";
 
 class HomeController {
-  index({ request, response }) {
-    return response.send("hello world");
+  index({ view }) {
+    return view.render("home.index");
   }
 }
 

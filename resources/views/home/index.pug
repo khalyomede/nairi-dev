@@ -1,0 +1,37 @@
+extends /layout/connected
+
+block content
+	- const articles = [{"title": "Astuces pour être plus productifs sur Laravel 5", excerpt: "Après 2 ans sur le framework, on vous donne nos conseils pour encore mieux organiser vos projets afin de mieux les maintenir.", image: "/img/1.jpg", url: "/article/astuces-pour-etre-plus-productif-sur-laravel-5"}, {"title": "L'importance des pauses au travail", excerpt: "Même si on pourrait penser que faire des pauses nous ralentirait, un manque de recul peut lui vous faire perdre encore plus de temps.", image: "/img/2.jpg", url: "/importance-des-pauses-au-travail"}]
+
+	include /component/article
+	include /component/footer
+	include /component/navbar
+	include /component/navbar-item
+
+	+navbar({ color: "black", brand: "nairi.dev" })
+		+navbar-item({ title: "Articles", url: "/article" })
+		+navbar-item({ title: "À propos", url: "/a-propos" })
+		+navbar-item({ title: "Github", url: "https://github.com/khalyomede/nairi-dev" })
+
+	.container
+		.row
+			.col.s12.center-align
+				h1
+					div nairi.dev
+					small.grey-text Blog orienté programmation web, par les frères Nairi.
+		.row
+			for article in articles
+				.col.s12.m6.l6.xl4
+					+article({
+						image: article.image,
+						title: article.title,
+						excerpt: article.excerpt,
+						url: article.url
+					})
+
+	+footer({
+		color: "black",
+		brand: "nairi.dev",
+		slogan: "Blog orienté programmation web, par les frères Nairi.",
+		copyright: "© 2019 nairi.dev"
+	})
