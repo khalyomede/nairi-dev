@@ -1,5 +1,9 @@
 extends /layout/disconnected
 
+block variables
+	- const title = "Accueil"
+	- const description = "Blog orienté programmation web, par les frères Nairi."
+
 block content
 	include /component/article
 	include /component/footer
@@ -14,9 +18,8 @@ block content
 	.container
 		.row
 			.col.s12.center-align
-				h1
-					div nairi.dev
-					small.grey-text Blog orienté programmation web, par les frères Nairi.
+				h1 nairi.dev
+				div Blog orienté programmation web, par les frères Nairi.
 		.row
 			for article in articles
 				.col.s12.m6.l6.xl4
