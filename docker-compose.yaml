@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  node:
+    container_name: node
+    restart: always
+    image: node
+    user: node
+    tty: true
+    stdin_open: true
+    working_dir: /home/node/nairi-dev
+    volumes:
+      - .:/home/node/nairi-dev
+    ports:
+      - 80:${PORT:-3333}
+
+  pg:
+    container_name: pg
+    image: postgres
+    restart: always
+    ports:
+      - ${DB_PORT:-5432}:5432
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-nairi.dev}
+      POSTGRES_USER: ${DB_USER:-nairi.dev}
+      POSTGRES_DB: ${DB_DATABASE:-nairi.dev}
+
+  adminer:
+    container_name: adminer
+    restart: always
+    image: adminer
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: pg

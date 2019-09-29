@@ -24,6 +24,13 @@ The articles are produced using our administration panel, and stored in the data
 - [AdonisJS CLI](https://www.npmjs.com/package/@adonisjs/cli)
 - [PostgresSQL](https://www.postgresql.org/download/)
 
+**If you use Docker**
+
+- Terminal emulator (GNU/Linux & UNIX) or command prompt (Windows)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [GNU/Make](https://www.gnu.org/software/make/)
+
 ## Installation
 
 **Without docker**
@@ -36,9 +43,26 @@ The articles are produced using our administration panel, and stored in the data
 
 **With docker**
 
-_in construction_
+1. `make install`
+2. `make start`
 
 ## Usage
 
+**Without Docker**
+
 1. Browse the public website: `http://localhost:3333`
 2. Browse the administration panel: _in construction_
+
+**With Docker**
+
+1. Browse the public website: [`http://localhost`](http://localhost)
+2. Browse the administration panel: [`http://localhost:8080`](http://localhost:8080)
+
+## Make commands
+
+Command | Description
+---|---
+`make install` | Install the dependencies, copy the environment file & set the proper host.
+`make up` | Start the containers.
+`make down` | Stop the containers.
+`make start` | Start the web server.
