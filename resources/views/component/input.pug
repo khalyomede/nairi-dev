@@ -1,0 +1,3 @@
+mixin input(parameters)
+	input.validate(type=parameters.type id=parameters.id placeholder=parameters.placeholder name=parameters.name)
+	label.active(for=parameters.id) #{parameters.text}

@@ -3,6 +3,8 @@ extends /layout/disconnected
 block variables
 	- const title = "Admin"
 	- const description = "Administrator login page."
+
+	include /component/input
 	
 block content
 	.container
@@ -16,11 +18,17 @@ block content
 						form#connect(method="POST" action="/admin/login")
 							.row(style="margin-bottom: 0px;")
 								.input-field.col.xl6
-									input#login.validate(type="text" placeholder="login" name="login")
-									label.active(for="login") Login
+									+input({
+										name: "login",
+										id: "login",
+										text: "Login"
+									})
 								.input-field.col.xl6
-									input#password.validate(type="password" placeholder="Password" name="password")
-									label.active(for="password") Password
+									+input({
+										name: "password",
+										id: "password",
+										text: "Password"
+									})
 					.card-action
 						button.btn.waves-effect.waves-light.black(type="submit" form="connect") Login
 block scripts
