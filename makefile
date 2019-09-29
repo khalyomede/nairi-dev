@@ -1,4 +1,4 @@
-.PHONY: install up down start
+.PHONY: install up down
 
 install: up
 	docker-compose exec node npm install
@@ -12,14 +12,13 @@ install: up
 	docker-compose exec node sed -i 's/^DB_DATABASE=.*/DB_DATABASE=nairi.dev/' .env
 	docker-compose down --remove-orphans --volumes
 	docker-compose up --detach
-	docker-compose exec node npm run adonis -- migration:run
-	docker-compose exec node npm run adonis -- seed
 
 up:
 	docker-compose up --detach
+	docker-compose exec node npm run adonis -- migration:run
+	docker-compose exec node npm run adonis -- seed
+	docker-compose exec --detach node npm start
+	docker-compose exec --detach node npm run rollup -- --config rollup.config.js --watch
 
 down:
-	docker-compose down --remove-orphans --volumes
-
-start: up
-	docker-compose exec node npm start
+	docker-compose down

@@ -44,7 +44,7 @@ The articles are produced using our administration panel, and stored in the data
 **With docker**
 
 1. `make install`
-2. `make start`
+1. `make up`
 
 ## Usage
 
@@ -65,4 +65,3 @@ Command | Description
 `make install` | Install the dependencies, copy the environment file & set the proper host.
 `make up` | Start the containers.
 `make down` | Stop the containers.
-`make start` | Start the web server.
