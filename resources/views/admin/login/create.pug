@@ -4,6 +4,7 @@ block variables
 	- const title = "Admin"
 	- const description = "Administrator login page."
 
+	include /component/button
 	include /component/input
 	
 block content
@@ -30,7 +31,7 @@ block content
 										text: "Password"
 									})
 					.card-action
-						button.btn.waves-effect.waves-light.black(type="submit" form="connect") Login
+						+button({type:"submit", form:"connect", text: "Login"})
 block scripts
 	script(type="text/javascript" defer="true").
 		document.addEventListener("DOMContentLoaded", () => {
