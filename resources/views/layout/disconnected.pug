@@ -1,4 +1,9 @@
 block variables
+
+include /component/footer
+include /component/navbar
+include /component/navbar-item
+
 doctype html
 html(lang="fr")
 	head
@@ -16,7 +21,20 @@ html(lang="fr")
 					font-family: "Fira code", monospace;
 				}
 	body
+		+navbar({  color: "black", brand: "nairi.dev" })
+			+navbar-item({ title: "Articles", url: "/article" })
+			+navbar-item({ title: "À propos", url: "/a-propos" })
+			+navbar-item({ title: "Github", url: "https://github.com/khalyomede/nairi-dev" })
+
 		block content
+
+		+footer({
+			color: "black",
+			brand: "nairi.dev",
+			slogan: "Blog orienté programmation web, par les frères Nairi.",
+			copyright: "© 2019 nairi.dev"
+		})
+
 		block scripts
 			script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
 			script(type="text/javascript").

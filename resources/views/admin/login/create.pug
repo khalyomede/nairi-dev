@@ -1,0 +1,30 @@
+extends /layout/disconnected
+
+block variables
+	- const title = "Admin"
+	- const description = "Administrator login page."
+	
+block content
+	.container
+		.row
+			.col.s12
+				br
+			.col.s12.m8.offset-m2.l6.offset-l3.xl6.offset-xl3
+				.card
+					.card-content
+						.card-title Connexion
+						form#connect(method="POST" action="/admin/login")
+							.row(style="margin-bottom: 0px;")
+								.input-field.col.xl6
+									input#login.validate(type="text" placeholder="login" name="login")
+									label.active(for="login") Login
+								.input-field.col.xl6
+									input#password.validate(type="password" placeholder="Password" name="password")
+									label.active(for="password") Password
+					.card-action
+						button.btn.waves-effect.waves-light.black(type="submit" form="connect") Login
+block scripts
+	script(type="text/javascript" defer="true").
+		document.addEventListener("DOMContentLoaded", () => {
+			document.querySelector("#login").focus();
+		})
