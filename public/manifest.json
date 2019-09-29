@@ -1,0 +1,9 @@
+{
+  "name": "nairi.dev",
+  "short_name": "nairi.dev",
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
+  "display": "minimal-ui",
+  "scope": "/",
+  "start_url": "/"
+}
