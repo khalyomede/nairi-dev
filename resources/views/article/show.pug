@@ -5,11 +5,12 @@ block variables
 	- const description = article.excerpt
 	- const brand = "nairi.dev"
 	- const slogan = "Blog orienté programmation web, par les frères Nairi."
+
+	include /component/parallax
+
 block content
-	.parallax-container
-		.parallax#parallax
-			img(src=article.image)
-	
+	+parallax({ src:article.image, alt: article.title })
+
 	.container
 		.row
 			.col.s12
