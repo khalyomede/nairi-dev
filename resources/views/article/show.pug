@@ -6,17 +6,8 @@ block variables
 	- const brand = "nairi.dev"
 	- const slogan = "Blog orienté programmation web, par les frères Nairi."
 block content
-	include /component/navbar
-	include /component/navbar-item
-	include /component/footer
-
-	+navbar({ color: "black", brand: brand })
-		+navbar-item({ title: "Articles", url: "/article" })
-		+navbar-item({ title: "À propos", url: "/a-propos" })
-		+navbar-item({ title: "Github", url: "https://github.com/khalyomede/nairi-dev" })
-
 	.parallax-container
-		.parallax
+		.parallax#parallax
 			img(src=article.image)
 	
 	.container
@@ -25,12 +16,6 @@ block content
 				h1 #{article.title}
 		.row
 			.col.s12 !{article.content}
-
-	+footer({
-		color: "black",
-		brand: brand,
-		slogan: slogan
-	})
 
 block scripts
 	script(src="/js/article/show.js")

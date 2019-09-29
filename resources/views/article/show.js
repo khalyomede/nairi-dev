@@ -1,3 +1,7 @@
 "use strict";
 
-console.log("Bye world!");
+import * as M from "materialize-css";
+
+document.addEventListener("DOMContentLoaded", () => {
+  M.Parallax.init(document.querySelector("#parallax"));
+});
