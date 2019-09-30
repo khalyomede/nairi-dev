@@ -5,7 +5,7 @@ block variables
     - const description = slogan
 
 block content
-    include /component/article
+    include /component/post
 
     .container
         .row
@@ -13,11 +13,11 @@ block content
                 h1 nairi.dev
                 div Blog orienté programmation web, par les frères Nairi.
         .row
-            for article in articles
+            for post in posts
                 .col.s12.m6.l6.xl4
-                    +article({
-                        image: article.image,
-                        title: article.title,
-                        excerpt: article.excerpt,
-                        url: `/article/${article.slug}`
+                    +post({
+                        image: post.image,
+                        title: post.title,
+                        excerpt: post.excerpt,
+                        url: `/article/${post.slug}`
                     })

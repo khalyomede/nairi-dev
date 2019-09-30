@@ -21,4 +21,4 @@ Route.get("/", "HomeController.index");
 Route.get("/admin/login", "AdminLoginController.create");
 Route.post("/admin/login", "AdminLoginController@store");
 
-Route.resource("article", "ArticleController").only(["show"]);
+Route.resource("article", "PostController").only(["show"]);

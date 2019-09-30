@@ -36,4 +36,4 @@ function bundle(from, to) {
   };
 }
 
-export default [bundle("article/show.js", "article/show.js")];
+export default [bundle("post/show.js", "post/show.js")];

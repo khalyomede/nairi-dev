@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| ArticleSeeder
+| PostSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -10,17 +10,18 @@
 |
 */
 
-const Article = use("App/Models/Article");
+const Post = use("App/Models/Post");
 
-class ArticleSeeder {
+class PostSeeder {
   async run() {
-    await Article.createMany([
+    await Post.createMany([
       {
         title: "Quelques astuces pour être plus productifs sur Laravel 5",
         excerpt:
           "Après 2 ans sur le framework, on vous donne nos conseils pour encore mieux organiser vos projets afin de mieux les maintenir.",
         slug: "quelques-astuces-pour-etre-plus-productifs-sur-laravel-5",
         image: "/img/1.jpg",
+        publishedAt: "2019-09-30 22:59:00",
         content: `Après 2 ans de projets personnels et un projet professionnel toujours sur pied, voilà quelques conseils pour vous permettre de garder une web app scalable et maintenable.
 
 ## Allégez vos controlleurs
@@ -65,10 +66,12 @@ class CheckAuthController {
         excerpt:
           "Même si on pourrait penser que faire des pauses nous ralentirait, un manque de recul peut lui vous faire perdre encore plus de temps.",
         slug: "importance-des-pauses-au-travail",
-        image: "/img/2.jpg"
+        image: "/img/2.jpg",
+        publishedAt: "2019-09-30 23:00:00",
+        content: ""
       }
     ]);
   }
 }
 
-module.exports = ArticleSeeder;
+module.exports = PostSeeder;

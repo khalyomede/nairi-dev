@@ -13,7 +13,7 @@ Website for nairi.dev domain.
 
 The whole files in this repository are used to serve nairi.dev, our IT blog. It uses AdonisJS 4 for the backend, PostgresSQL for the database, and Pug for the front-end.
 
-The articles are produced using our administration panel, and stored in the database, where they are fetched for the users that browse the blog.
+The posts are produced using our administration panel, and stored in the database, where they are fetched for the users that browse the blog.
 
 ## Prerequisites
 
@@ -60,8 +60,8 @@ The articles are produced using our administration panel, and stored in the data
 
 ## Make commands
 
-Command | Description
----|---
-`make install` | Install the dependencies, copy the environment file & set the proper host.
-`make up` | Start the containers.
-`make down` | Stop the containers.
+| Command        | Description                                                                |
+| -------------- | -------------------------------------------------------------------------- |
+| `make install` | Install the dependencies, copy the environment file & set the proper host. |
+| `make up`      | Start the containers.                                                      |
+| `make down`    | Stop the containers.                                                       |

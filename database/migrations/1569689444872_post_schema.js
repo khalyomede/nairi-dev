@@ -3,9 +3,9 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use("Schema");
 
-class ArticleSchema extends Schema {
+class PostSchema extends Schema {
   up() {
-    this.createIfNotExists("articles", table => {
+    this.createIfNotExists("post", table => {
       table.increments();
       table.timestamps();
       table.string("title", 191);
@@ -13,13 +13,14 @@ class ArticleSchema extends Schema {
       table.string("excerpt", 191);
       table.string("image", 191);
       table.string("url", 101);
+      table.datetime("publishedAt");
       table.text("content");
     });
   }
 
   down() {
-    this.dropIfExists("articles");
+    this.dropIfExists("post");
   }
 }
 
-module.exports = ArticleSchema;
+module.exports = PostSchema;
