@@ -1,23 +1,23 @@
 extends /layout/disconnected
 
 block variables
-	- const title = "Accueil"
-	- const description = slogan
+    - const title = "Accueil"
+    - const description = slogan
 
 block content
-	include /component/article
+    include /component/article
 
-	.container
-		.row
-			.col.s12.center-align
-				h1 nairi.dev
-				div Blog orienté programmation web, par les frères Nairi.
-		.row
-			for article in articles
-				.col.s12.m6.l6.xl4
-					+article({
-						image: article.image,
-						title: article.title,
-						excerpt: article.excerpt,
-						url: `/article/${article.slug}`
-					})
+    .container
+        .row
+            .col.s12.center-align
+                h1 nairi.dev
+                div Blog orienté programmation web, par les frères Nairi.
+        .row
+            for article in articles
+                .col.s12.m6.l6.xl4
+                    +article({
+                        image: article.image,
+                        title: article.title,
+                        excerpt: article.excerpt,
+                        url: `/article/${article.slug}`
+                    })

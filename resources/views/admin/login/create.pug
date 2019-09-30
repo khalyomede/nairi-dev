@@ -1,43 +1,43 @@
 extends /layout/disconnected
 
 block variables
-	- const title = "Admin"
-	- const description = "Administrator login page."
+    - const title = "Admin"
+    - const description = "Administrator login page."
 
-	include /component/button
-	include /component/card
-	include /component/card-action
-	include /component/card-content
-	include /component/card-title
-	include /component/input
+    include /component/button
+    include /component/card
+    include /component/card-action
+    include /component/card-content
+    include /component/card-title
+    include /component/input
 
 block content
-	.container
-		.row
-			.col.s12
-				br
-			.col.s12.m8.offset-m2.l8.offset-l2.xl6.offset-xl3
-				+card
-					+card-content
-						+card-title Connexion
-						form#connect(method="POST" action="/admin/login")
-							.row(style="margin-bottom: 0px;")
-								.input-field.col.xl6.l6.m6.s12
-									+input({
-										name: "login",
-										id: "login",
-										text: "Login"
-									})
-								.input-field.col.xl6.l6.m6.s12
-									+input({
-										name: "password",
-										id: "password",
-										text: "Password"
-									})
-					+card-action
-						+button({type:"submit", form:"connect", text: "Login"})
+    .container
+        .row
+            .col.s12
+                br
+            .col.s12.m8.offset-m2.l8.offset-l2.xl6.offset-xl3
+                +card
+                    +card-content
+                        +card-title Connexion
+                        form#connect(method="POST" action="/admin/login")
+                            .row(style="margin-bottom: 0px;")
+                                .input-field.col.xl6.l6.m6.s12
+                                    +input({
+                                        name: "login",
+                                        id: "login",
+                                        text: "Login"
+                                    })
+                                .input-field.col.xl6.l6.m6.s12
+                                    +input({
+                                        name: "password",
+                                        id: "password",
+                                        text: "Password"
+                                    })
+                    +card-action
+                        +button({type:"submit", form:"connect", text: "Login"})
 block scripts
-	script(type="text/javascript" defer="true").
-		document.addEventListener("DOMContentLoaded", () => {
-			document.querySelector("#login").focus();
-		})
+    script(type="text/javascript" defer="true").
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("#login").focus();
+        })
