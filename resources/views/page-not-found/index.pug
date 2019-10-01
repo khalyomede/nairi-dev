@@ -1,0 +1,15 @@
+extends /layout/disconnected
+
+block variables
+    - const title = "Page not found"
+    - const description = "Page not found, for the lost souls."
+
+block content
+    include /component/not-found-card
+
+    .container
+        .row
+            .col.s12
+                br
+            .col.s12
+                +not-found-card({ src: "/img/not-found.jpg", text: "It seems this page does not exist." })

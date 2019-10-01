@@ -19,6 +19,8 @@ const Route = use("Route");
 Route.get("/", "HomeController.index");
 
 Route.get("/admin/login", "AdminLoginController.create");
-Route.post("/admin/login", "AdminLoginController@store");
+Route.post("/admin/login", "AdminLoginController.store");
 
 Route.resource("article", "PostController").only(["show"]);
+
+Route.any("*", "PageNotFoundController.index");

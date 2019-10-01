@@ -1,0 +1,9 @@
+mixin not-found-card(parameters)
+    .card.horizontal.z-depth-0
+        .card-stacked
+            .card-content
+                h1(style="font-size: 2em;") #{parameters.text}
+            .card-action
+                a(href='/') Home page
+        .card-image
+            img(src=parameters.src)
